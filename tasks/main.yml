@@ -2,17 +2,29 @@
     - name: Install PCP GUI
       apt: pkg=pcp-gui
       become: yes
+      tags:
+      - monitoring
+      - run
 
     - name: Install Nmap for network discovery and security auditing
       apt: pkg=nmap
       become: yes
+      tags:
+      - monitoring
+      - run
   
     - name: Determine if laptop
       command: laptop-detect
       register: is_laptop
       ignore_errors: yes
+      tags:
+      - monitoring
+      - run
 
     - name: Install PowerTOP to track power consumption
       apt: pkg=powertop
       when: is_laptop|succeeded
       become: yes
+      tags:
+      - monitoring
+      - run
