@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "vagrant-monitoring"
   config.vm.network :private_network, type: "dhcp"
 
-  config.vm.provision "shell", inline: "sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install python"
+  config.vm.provision "shell", inline: "sudo apt-get -y update && sudo apt-get install -y laptop-detect && sudo apt-get -y install python"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "playbook.yml"

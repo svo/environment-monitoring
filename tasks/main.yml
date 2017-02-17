@@ -1,11 +1,4 @@
 
-    - name: Install PCP GUI
-      apt: pkg=pcp-gui
-      become: yes
-      tags:
-      - monitoring
-      - run
-
     - name: Install Nmap for network discovery and security auditing
       apt: pkg=nmap
       become: yes
@@ -24,6 +17,20 @@
     - name: Install PowerTOP to track power consumption
       apt: pkg=powertop
       when: is_laptop|succeeded
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install PCP GUI
+      apt: pkg=pcp-gui
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install Wireshark
+      apt: pkg=wireshark
       become: yes
       tags:
       - monitoring
