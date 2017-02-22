@@ -35,3 +35,10 @@
       tags:
       - monitoring
       - run
+
+    - name: Install hwinfo
+      apt: pkg=hwinfo
+      become: yes
+      tags:
+      - monitoring
+      - run
