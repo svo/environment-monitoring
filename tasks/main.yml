@@ -42,3 +42,10 @@
       tags:
       - monitoring
       - run
+
+    - name: Install whois
+      apt: pkg=whois
+      become: yes
+      tags:
+      - monitoring
+      - run
