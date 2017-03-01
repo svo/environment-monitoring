@@ -5,6 +5,13 @@
       tags:
       - monitoring
       - run
+
+    - name: Install iftop for network monitoring
+      apt: pkg=iftop
+      become: yes
+      tags:
+      - monitoring
+      - run
   
     - name: Determine if laptop
       command: laptop-detect
