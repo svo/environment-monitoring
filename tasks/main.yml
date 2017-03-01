@@ -14,6 +14,13 @@
       - monitoring
       - run
 
+    - name: Install htop for process monitoring
+      apt: pkg=htop
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install iftop for network monitoring
       apt: pkg=iftop
       become: yes
