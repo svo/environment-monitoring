@@ -1,4 +1,12 @@
 
+    - name: Determine if laptop
+      command: laptop-detect
+      register: is_laptop
+      ignore_errors: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install Nmap for network discovery and security auditing
       apt: pkg=nmap
       become: yes
@@ -12,11 +20,10 @@
       tags:
       - monitoring
       - run
-  
-    - name: Determine if laptop
-      command: laptop-detect
-      register: is_laptop
-      ignore_errors: yes
+
+    - name: Install iotop for disk I/O monitoring
+      apt: pkg=iotop
+      become: yes
       tags:
       - monitoring
       - run
