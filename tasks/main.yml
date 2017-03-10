@@ -21,6 +21,13 @@
       - monitoring
       - run
 
+    - name: Install smem for memory monitoring
+      apt: pkg=smem
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install iftop for network monitoring
       apt: pkg=iftop
       become: yes
