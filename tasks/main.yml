@@ -50,6 +50,13 @@
       - monitoring
       - run
 
+    - name: Install Phoronix Test Suite benchmarking platform
+      apt: pkg=phoronix-test-suite
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install PCP GUI
       apt: pkg=pcp-gui
       become: yes
