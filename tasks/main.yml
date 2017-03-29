@@ -84,3 +84,17 @@
       tags:
       - monitoring
       - run
+
+    - name: Add Penetration Testing Tools apt repository
+      apt_repository: repo="ppa:3lack7ragon/blackdragon-penetration-testing-ppa" update_cache=yes
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install rainbowcrack
+      apt: pkg=rainbowcrack
+      become: yes
+      tags:
+      - monitoring
+      - run
