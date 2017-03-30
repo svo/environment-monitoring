@@ -7,8 +7,15 @@
       - monitoring
       - run
 
-    - name: Install Nmap for network discovery and security auditing
-      apt: pkg=nmap
+    - name: Add Penetration Testing Tools apt repository
+      apt_repository: repo="ppa:3lack7ragon/blackdragon-penetration-testing-ppa" update_cache=yes
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install rainbowcrack
+      apt: pkg=rainbowcrack
       become: yes
       tags:
       - monitoring
@@ -16,6 +23,13 @@
 
     - name: Install ncrack network authentication cracking tool
       apt: pkg=ncrack
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install Nmap for network discovery and security auditing
+      apt: pkg=nmap
       become: yes
       tags:
       - monitoring
@@ -87,20 +101,6 @@
 
     - name: Install whois
       apt: pkg=whois
-      become: yes
-      tags:
-      - monitoring
-      - run
-
-    - name: Add Penetration Testing Tools apt repository
-      apt_repository: repo="ppa:3lack7ragon/blackdragon-penetration-testing-ppa" update_cache=yes
-      become: yes
-      tags:
-      - monitoring
-      - run
-
-    - name: Install rainbowcrack
-      apt: pkg=rainbowcrack
       become: yes
       tags:
       - monitoring
