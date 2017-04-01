@@ -112,3 +112,10 @@
       tags:
       - monitoring
       - run
+
+    - name: Install lynx command line browser
+      apt: pkg=lynx
+      become: yes
+      tags:
+      - monitoring
+      - run
