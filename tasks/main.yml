@@ -105,3 +105,10 @@
       tags:
       - monitoring
       - run
+
+    - name: Install HTTPie cURL wrapper
+      apt: pkg=httpie
+      become: yes
+      tags:
+      - monitoring
+      - run
