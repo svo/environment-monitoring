@@ -28,6 +28,13 @@
       - monitoring
       - run
 
+    - name: Install skipfish web application security reconnaissance tool
+      apt: pkg=skipfish
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install Nmap for network discovery and security auditing
       apt: pkg=nmap
       become: yes
