@@ -126,3 +126,13 @@
       tags:
       - monitoring
       - run
+
+    - name: Install gparted partition editor
+      apt: pkg={{ item }}
+      with_items:
+      - gpart
+      - gparted
+      become: yes
+      tags:
+      - monitoring
+      - run
