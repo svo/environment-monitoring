@@ -7,6 +7,10 @@
       - monitoring
       - run
 
+    - name: Install tor anonymizing overlay network for TCP
+      apt: pkg=tor
+      become: yes
+
     - name: Add Penetration Testing Tools apt repository
       apt_repository: repo="ppa:3lack7ragon/blackdragon-penetration-testing-ppa" update_cache=yes
       become: yes
