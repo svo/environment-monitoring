@@ -11,6 +11,10 @@
       apt: pkg=tor
       become: yes
 
+    - name: Disable tor startup
+      shell: update-rc.d tor disable
+      become: yes
+
     - name: Add Penetration Testing Tools apt repository
       apt_repository: repo="ppa:3lack7ragon/blackdragon-penetration-testing-ppa" update_cache=yes
       become: yes
