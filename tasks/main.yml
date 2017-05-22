@@ -9,10 +9,16 @@
 
     - name: Install tor anonymizing overlay network for TCP
       apt: pkg=tor
+      tags:
+      - monitoring
+      - run
       become: yes
 
     - name: Disable tor startup
       shell: update-rc.d tor disable
+      tags:
+      - monitoring
+      - run
       become: yes
 
     - name: Add Penetration Testing Tools apt repository
