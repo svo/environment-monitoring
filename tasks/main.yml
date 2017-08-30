@@ -63,6 +63,13 @@
       - monitoring
       - run
 
+    - name: Install reaver WiFi Protected Setup Attack Tool
+      apt: pkg=reaver
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install htop for process monitoring
       apt: pkg=htop
       become: yes
