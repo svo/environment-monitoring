@@ -63,6 +63,13 @@
       - monitoring
       - run
 
+    - name: Install aircrack-ng WiFi network security tools
+      apt: pkg=aircrack-ng
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install reaver WiFi Protected Setup Attack Tool
       apt: pkg=reaver
       become: yes
