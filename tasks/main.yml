@@ -70,6 +70,13 @@
       - monitoring
       - run
 
+    - name: Install netstress network activity benchmarking tool
+      apt: pkg=netstress
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install ApacheBench
       apt: pkg=apache2-utils
       become: yes
