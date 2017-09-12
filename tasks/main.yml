@@ -63,6 +63,20 @@
       - monitoring
       - run
 
+    - name: Install hping3 network smashing tool
+      apt: pkg=hping3
+      become: yes
+      tags:
+      - monitoring
+      - run
+
+    - name: Install ApacheBench
+      apt: pkg=apache2-utils
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install aircrack-ng WiFi network security tools
       apt: pkg=aircrack-ng
       become: yes
