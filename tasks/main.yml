@@ -95,6 +95,13 @@
       - monitoring
       - run
 
+    - name: Install smartmontools applications for testing hard drives
+      apt: pkg=smartmontools
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install TestDisk partition scanner and disk recovery tool
       apt: pkg=testdisk
       become: yes
