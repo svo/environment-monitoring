@@ -109,6 +109,13 @@
       - monitoring
       - run
 
+    - name: Install NCurses Disk Usage utility
+      apt: pkg=ncdu
+      become: yes
+      tags:
+      - monitoring
+      - run
+
     - name: Install wondershaper for limiting adapter bandwidth
       apt: pkg=wondershaper
       become: yes
