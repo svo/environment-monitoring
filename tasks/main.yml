@@ -1,12 +1,4 @@
 
-    - name: Determine if laptop
-      command: laptop-detect
-      register: is_laptop
-      ignore_errors: yes
-      tags:
-      - monitoring
-      - run
-
     - name: Install htop for process monitoring
       apt: pkg=htop
       become: yes
@@ -37,14 +29,6 @@
 
     - name: Install PowerTOP to track power consumption
       apt: pkg=powertop
-      when: is_laptop|succeeded
-      become: yes
-      tags:
-      - monitoring
-      - run
-
-    - name: Install Phoronix Test Suite benchmarking platform
-      apt: pkg=phoronix-test-suite
       become: yes
       tags:
       - monitoring
